@@ -4,7 +4,9 @@ Collection of Linux Scripts for ADS-B receiver data visualization
 ## Requirements:
 - Some device on your network running dump1090 (such as a piaware)
 - Access to said device (default over port 8080)
-- jq (https://stedolan.github.io/jq/) installed on local machine (`sudo apt-get install jq`)
+- `jq` (https://stedolan.github.io/jq/) installed on local machine (`sudo apt-get install jq`)
+- `curl` (`sudo apt-get install curl`)
+- Note: current testing environment Ubuntu 18.04
 
 ## Current Capabilities:
 - 
