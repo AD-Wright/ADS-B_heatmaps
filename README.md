@@ -9,10 +9,10 @@ Collection of Linux Scripts for ADS-B receiver data visualization
 - Note: current testing environment Ubuntu 18.04
 
 ## Current Capabilities:
-- 
+- Save aircraft data to local file
 
 ## Planned:
-- Generate a heatmap-stle overlay on some kind of map based on traffic volume
+- Generate a heatmap-style overlay on some kind of map based on traffic volume
   - Sort by altitude
   - Could just connect to port 30003 with `nc` and read SBS-1 messages (http://woodair.net/sbs/article/barebones42_socket_data.htm)
 - Generate signal strength overlays 
