@@ -26,7 +26,7 @@ cat $LOG_DIR/log.dat | tr -d '\n' | sed 's/\]\[/\]\
 sort -k 2,3 $LOG_DIR/temp.dat | sed 's/\[ //g' | sed 's/\]//g' > $LOG_DIR/sorted.dat
 
 # prep rectangular heatmap file for gnuplot (nix altitude data, trim to 2 dec.)
-awk '{printf("%3.2f %3.2f \n", $1, $2)}' $LOG_DIR/sorted.dat | uniq -c -w 13 | awk '{printf("%3.4f %3.4f %.0f\n", $2, $3, $1)}' > $LOG_DIR/rect.dat
+awk '{printf("%3.2f %3.2f \n", $1, $2)}' $LOG_DIR/sorted.dat | uniq -c -w 13 | awk '{printf("%3.2f %3.2f %.0f\n", $2, $3, $1)}' > $LOG_DIR/rect.dat
 #awk '{printf("%3.2f %3.2f %.0f\n", $1, $2, 1)}' $LOG_DIR/sorted.dat > $LOG_DIR/rect.dat
 
 # plot rectangular heatmap file in gnuplot
