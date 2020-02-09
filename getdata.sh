@@ -33,6 +33,7 @@ RATE=$(curl -s $ADDR/receiver.json | jq '. | .refresh')
 RATE=$(( $RATE / 1000 ))  # since default milliseconds
 LAT=$(curl -s $ADDR/receiver.json | jq '. | .lat')
 LON=$(curl -s $ADDR/receiver.json | jq '. | .lon')
+echo "$LAT $LON 1" > $LOG_DIR/receiver.dat
 
 # loop to update at the receiver rate
 while true; do
