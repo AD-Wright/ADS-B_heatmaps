@@ -13,8 +13,7 @@ Collection of Linux Scripts for ADS-B receiver data visualization
 ## Current Capabilities:
 - Save aircraft data to local file
 - Generate basic heatmap-style overlay based on traffic volume
-![Image of 48 hours of data]
-(https://raw.github.com/AD_Wright/ADS-B_heatmaps/images/rect48.png)
+![Image of 48 hours of data](https://github.com/AD-Wright/ADS-B_heatmaps/raw/master/images/rect48.png)
 
 ## Planned:
 - Sort heatmap by altitude
