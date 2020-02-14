@@ -11,15 +11,17 @@ Collection of Linux Scripts for ADS-B receiver data visualization
 - Note: current testing environment Ubuntu 18.04
 
 ## Current Capabilities:
-- Save aircraft data to local file
-- Generate basic heatmap-style overlay based on traffic volume
+- Save aircraft data from your receiver to local file
+- Generate basic heatmap-style overlay based on traffic volume (sumdata.sh)
 ![Image of 48 hours of data](https://github.com/AD-Wright/ADS-B_heatmaps/raw/master/images/rect48.png)
+- Generate socket30003-like Google Maps compatible "csv" file (convert.sh)
 
 ## Planned:
 - Sort heatmap by altitude
 - Generate signal strength overlays 
   - Map overlay
   - Some kind of polar plot
+  - RSSI vs. Distance?
   
 ## Basic Troubleshooting
 - If you can't access `<ip>:8080/data/aircraft.json`, you probably installed something that messed with your lighttpd configuration.  It should have an alias to `/run/dump1090/data`.  You can create a link (`sudo ln -s /run/dump1090-fa /var/www/html/data`).
