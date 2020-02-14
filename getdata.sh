@@ -18,10 +18,7 @@ REC_IP=192.168.193.125
 REC_PORT=8080
 DATA_DIR=/data/
 ADDR=$REC_IP:$REC_PORT$DATA_DIR
-
-# plot binning configuration
-FLAT_RES=1   # overlay binning grid size, in default units
-POLAR_RES=2  # polar RSSI plot grid size, in degrees
+ALT=4708  # Total altitude: altitude of antenna above gound + ground alt (ft)
 
 ### END USER CONFIGURATION ###
 
@@ -33,7 +30,7 @@ RATE=$(curl -s $ADDR/receiver.json | jq '. | .refresh')
 RATE=$(( $RATE / 1000 ))  # since default milliseconds
 LAT=$(curl -s $ADDR/receiver.json | jq '. | .lat')
 LON=$(curl -s $ADDR/receiver.json | jq '. | .lon')
-echo "$LAT $LON 1" > $LOG_DIR/receiver.dat
+echo "$LAT $LON 1 $ALT" > $LOG_DIR/receiver.dat
 
 # loop to update at the receiver rate
 while true; do
