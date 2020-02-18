@@ -13,8 +13,9 @@
 INSTALL_DIR=~/Documents/Gits/ADS-B_heatmaps
 LOG_DIR=$INSTALL_DIR/log  # directory needs to exist or script will fail
 
-# plot binning configuration
+# plot configuration
 SCALE=4      # 4 recommended
+MAX_ALT=60000 # to trim out possible extrananeous or erroneous points
 
 ### END USER CONFIGURATION ###
 
@@ -83,9 +84,11 @@ set palette rgb 34,35,36
 plot '$LOG_DIR/polar.dat' using 2:1:3 with points pt 0 palette
 EOF
 
+# remove points higher than MAX_ALT
+awk -v maxalt=$MAX_ALT '{ if ($5 < maxalt) {print $0; }}' $LOG_DIR/polar.dat > $LOG_DIR/section.dat
 # define size of canvas
 DISSPAN=$(awk "BEGIN { print 250*$SCALE + 90 }" )
-ALTSPAN=$(awk "BEGIN { print 100*$SCALE + 220 }" )
+ALTSPAN=$(awk "BEGIN { print 60*$SCALE + 220 }" )
 
 # calculate margins
 BMAR=$(awk "BEGIN { print 75/$ALTSPAN }")
@@ -112,7 +115,7 @@ set autoscale xfix
 set autoscale yfix
 set output "$LOG_DIR/section.png"
 set palette rgb 34,35,36
-plot '$LOG_DIR/polar.dat' using (\$4/5280):5:3 with points pt 0 palette
+plot '$LOG_DIR/section.dat' using (\$4/5280):5:3 with points pt 0 palette
 EOF
 
 
