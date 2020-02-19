@@ -53,10 +53,10 @@ AZISPAN=$(awk "BEGIN { print 360*$SCALE + 90 }" )
 ELESPAN=$(awk "BEGIN { print 100*$SCALE + 220 }" )
 
 # calculate margins
-BMAR=$(awk "BEGIN { print 75/$ELESPAN }")
+BMAR=$(awk "BEGIN { print 65/$ELESPAN }")
 TMAR=$(awk "BEGIN { print 1-15/$ELESPAN }")
-LMAR=$(awk "BEGIN { print 90/$AZISPAN }")
-RMAR=$(awk "BEGIN { print 1-130/$AZISPAN }")
+LMAR=$(awk "BEGIN { print 80/$AZISPAN }")
+RMAR=$(awk "BEGIN { print 1-140/$AZISPAN }")
 
 # sort from strongest signal to weakest (dark colors on top)
 cat $LOG_DIR/converted.dat | sort -r -nk3 > $LOG_DIR/polar.dat
@@ -88,13 +88,13 @@ EOF
 awk -v maxalt=$MAX_ALT '{ if ($5 < maxalt) {print $0; }}' $LOG_DIR/polar.dat > $LOG_DIR/section.dat
 # define size of canvas
 DISSPAN=$(awk "BEGIN { print 250*$SCALE + 90 }" )
-ALTSPAN=$(awk "BEGIN { print 60*$SCALE + 220 }" )
+ALTSPAN=$(awk "BEGIN { print 100*$SCALE + 220 }" )
 
 # calculate margins
-BMAR=$(awk "BEGIN { print 75/$ALTSPAN }")
+BMAR=$(awk "BEGIN { print 65/$ALTSPAN }")
 TMAR=$(awk "BEGIN { print 1-15/$ALTSPAN }")
-LMAR=$(awk "BEGIN { print 90/$DISSPAN }")
-RMAR=$(awk "BEGIN { print 1-130/$DISSPAN }")
+LMAR=$(awk "BEGIN { print 110/$DISSPAN }")
+RMAR=$(awk "BEGIN { print 1-110/$DISSPAN }")
 
 # plot distance vs. altitude
 # inspiration same as above
