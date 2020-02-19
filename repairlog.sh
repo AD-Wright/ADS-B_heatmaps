@@ -16,8 +16,9 @@ LOG_DIR=$INSTALL_DIR/log  # directory needs to exist or script will fail
 ### END USER CONFIGURATION ###
 
 # read from log.dat, remove unprintable characters, save as replog.dat
-cat $LOG_DIR/log.dat | tr -cd '\11\12\15\40-\176' > replog.dat
+cat $LOG_DIR/log.dat | tr -cd '\11\12\15\40-\176' > $LOG_DIR/replog.dat
 
-# you will then need to manually delete / rename the misbehaving log.dat, and rename replog.dat
+# overwrite log.dat with fixed file
+mv $LOG_DIR/replog.dat $LOG_DIR/log.dat
 
 # for more info see: https://alvinalexander.com/blog/post/linux-unix/how-remove-non-printable-ascii-characters-file-unix
