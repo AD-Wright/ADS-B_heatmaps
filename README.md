@@ -14,11 +14,11 @@ Collection of Linux Scripts for ADS-B receiver data visualization
 - Save aircraft data from your receiver to local file
 - Generate socket30003-like Google Maps compatible "csv" file (convert.sh)
 - Generate basic heatmap-style overlay based on traffic volume (sumdata.sh)
-![Image of 169 hours of data](https://github.com/AD-Wright/ADS-B_heatmaps/raw/master/images/rect169.png)
+![Image of 168 hours of data](https://github.com/AD-Wright/ADS-B_heatmaps/raw/master/images/rect168.png)
 - Generate basic plot of received signal RSSI by azimuth and elevation angles from receiver (sumpolar.sh)
-![Image of 169 hours of data](https://github.com/AD-Wright/ADS-B_heatmaps/raw/master/images/polar.png)
+![Image of 168 hours of data](https://github.com/AD-Wright/ADS-B_heatmaps/raw/master/images/polar.png)
 - Generate basic plot of received signal RSSI by distance and altitude (sumpolar.sh)
-![Image of 169 hours of data](https://github.com/AD-Wright/ADS-B_heatmaps/raw/master/images/section.png)
+![Image of 168 hours of data](https://github.com/AD-Wright/ADS-B_heatmaps/raw/master/images/section.png)
 
 ## Planned:
 - Sort heatmap by altitude
